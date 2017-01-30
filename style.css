@@ -1,0 +1,268 @@
+ /*
+ https://coolors.co/c97d60-544f50-cd5334-ffbcb5-f2e5d7
+@import url('https://fonts.googleapis.com/css?family=Cabin|Nunito|Nunito+Sans|Patua+One|Raleway|Titillium+Web');
+*/
+ @import url('https://fonts.googleapis.com/css?family=Cabin|Patua+One');
+
+ @page {
+   size: A4;
+ }
+
+ @font-face {
+   font-family: 'Bukhari Script';
+   src: url('BukhariScript-Regular.otf');
+   font-weight: normal;
+   font-style: normal;
+ }
+
+ @font-face {
+   font-family: 'Hack';
+   src: url('Hack-Regular.ttf');
+   font-weight: normal;
+   font-style: normal;
+ }
+
+
+ @font-face {
+   font-family: 'Simplifica';
+   src: url('SIMPLIFICA Typeface.ttf');
+   font-weight: normal;
+   font-style: normal;
+ }
+
+ ul { list-style: none; }
+ ul { padding: 0; }
+
+ html {
+   background: #ddd;
+ }
+
+ body {
+   font: 16px "Cabin";
+   background: #f2e5d7;
+   box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
+   /* A4 Page dimensions */
+   width: 21cm;
+   height: 29.7cm;
+   margin: 0 auto;
+   color: #2e282a;
+   display: flex;
+ }
+
+ body > section {
+   position: relative;
+   padding: 15px;
+ }
+
+ h1, h2 {
+   font-family: "Bukhari Script";
+   font-weight: normal;
+ }
+
+ h2 {
+   margin: 0;
+ }
+
+ .tagline {
+   font: 10px "Cabin";
+   letter-spacing: 2px;
+   text-transform: uppercase;
+   margin: 0 auto 5px 20px;
+ }
+
+ #sidebar {
+   background: #2e282a;
+   color: #cd5334;
+   padding: 20px;
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+ }
+
+ #sidebar h1 {
+   font-size: 52px;
+   text-align: center;
+   margin-bottom: 50px;
+ }
+
+ #sidebar span {
+   margin-bottom: 10px;
+ }
+
+ 
+ #sidebar address {
+   font-style: normal;
+   margin-bottom: 40px;
+ }
+
+ #sidebar address a, #sidebar .uni {
+   padding-left: 40px;
+   position: relative;
+ }
+
+
+ #sidebar address a {
+   color: #cd5334;
+   text-decoration: none;
+ }
+
+ #sidebar address a:before, #sidebar .uni:before {
+   position: absolute;
+   left: 0;
+   display: block;
+   width: 40px;
+   text-align: center;
+ }
+
+ #sidebar .github:before { content: ""; }
+ #sidebar .email:before { content: ""; }
+ #sidebar .phone:before { content: ""; }
+
+ #sidebar .uni {
+   color: #544f50;
+   text-align: justify;
+ }
+
+ #sidebar .uni:before {
+   content: "";
+   top: 50%;
+   transform: translateY(-50%);
+   text-align: center;
+   color: #cd5334;
+ }
+
+ #sidebar strong {
+   color: #cd5334;
+   font-weight: normal;
+ }
+
+ #sidebar span:before { font-size: 20px; }
+
+ #sidebar .interests {
+   margin-top: 30px;
+   display: flex;
+   flex-wrap: wrap;
+   padding: 0;
+ }
+
+ #sidebar .interests li {
+   display: inline-block;
+   text-align: center;
+   margin: 20px;
+   width: 60px;
+   color: #544f50;
+ }
+
+ #sidebar .interests li:before {
+   display: block;
+   color: #cd5334;
+ }
+
+ #sidebar .interests .reading:before { content: ""; }
+ #sidebar .interests .programming:before { content: ""; }
+ #sidebar .interests .drawing:before { content: ""; }
+ #sidebar .interests .sca:before { content: ""; }
+
+ main {
+   display: flex;
+   flex-wrap: wrap;
+ }
+
+ main > section {
+   padding: 30px;
+ }
+
+ #achievements {
+   flex-basis: 50%;
+ }
+
+ /*
+ #skills {
+   flex-basis: 25%;
+   background: #2e282a;
+   color: #cd5334;
+   position: relative;
+   right: 20px;
+ }
+
+ #skills:after {
+   content: '';
+   display: block;
+   border-left: 97px solid #2e282a;
+   border-right: 97px solid #2e282a;
+   border-bottom: 60px solid transparent;
+   position: absolute;
+   left: 0;
+   bottom: -60px;
+ }
+*/
+
+#skills {
+    background: #2e282a;
+    color: #cd5334;
+    border: 1px dashed hsl(12, 45%, 40%);
+    box-shadow: 5px 0 0 #2e282a,
+                -5px 0 0 #2e282a,
+                0 -5px 0 #2e282a,
+                5px -5px 0 #2e282a,
+                -5px -5px 0 #2e282a;
+    position: relative;
+    flex-basis: 20%;
+    z-index: 3;
+}
+
+#skills:after,
+#skills:before {
+    content: '';
+    position: absolute;
+    top: calc(100% - 1px);
+    width: calc(50% + 25px);
+    height: 49px;
+    border-bottom: 1px dashed #cd5334;
+}
+
+#skills:after {
+  transform: rotateZ(40deg) skewX(40deg) translateY(-2px);
+    transform-origin: top right;
+    right: -1px;
+    background-color: #2e282a;
+    border-right: 1px dashed #cd5334;
+    box-shadow: 6px 0 0 #2e282a,
+                0 6px 0 #2e282a,
+                6px 6px 0 #2e282a;
+}
+
+#skills:before {
+    transform: rotateZ(-40deg) skewX(-40deg);
+    transform-origin: top left;
+    left: -1px;
+    background-color: #2e282a;
+    border-left: 1px dashed #cd5334;
+    box-shadow: -6px 0 0 #2e282a,
+                0 6px 0 #2e282a,
+                -6px 6px 0 #2e282a;
+}
+
+ #skills li {
+   margin-bottom: 10px;
+ }
+
+ #achievements > ul > li {
+   border-left: 3px solid #C97D60;
+   margin: 5px;
+   padding-left: 4px;
+ }
+
+ #experience {
+   display: flex;
+   flex-wrap: wrap;
+   background: #C97D60;
+ }
+
+ #experience header {
+   width: 100%;
+ }
+
+ #experience section {
+   flex-basis: 50%;
+ } 

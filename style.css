@@ -2,7 +2,7 @@
  https://coolors.co/c97d60-544f50-cd5334-ffbcb5-f2e5d7
 @import url('https://fonts.googleapis.com/css?family=Cabin|Nunito|Nunito+Sans|Patua+One|Raleway|Titillium+Web');
 */
- @import url('https://fonts.googleapis.com/css?family=Cabin|Patua+One');
+ @import url('https://fonts.googleapis.com/css?family=Cabin');
 
  @page {
    size: A4;
@@ -11,21 +11,6 @@
  @font-face {
    font-family: 'Bukhari Script';
    src: url('BukhariScript-Regular.otf');
-   font-weight: normal;
-   font-style: normal;
- }
-
- @font-face {
-   font-family: 'Hack';
-   src: url('Hack-Regular.ttf');
-   font-weight: normal;
-   font-style: normal;
- }
-
-
- @font-face {
-   font-family: 'Simplifica';
-   src: url('SIMPLIFICA Typeface.ttf');
    font-weight: normal;
    font-style: normal;
  }
@@ -39,7 +24,7 @@
 
  body {
    font: 16px "Cabin";
-   background: #f2e5d7;
+   background: #e0d3c5;
    box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
    /* A4 Page dimensions */
    width: 21cm;
@@ -70,7 +55,17 @@
    margin: 0 auto 5px 20px;
  }
 
- #sidebar {
+ dl {
+   column-count: 2;
+ }
+ dt {
+   break-before: column;
+ }
+ dd {
+   margin: 0;
+ }
+
+ body > header {
    background: #2e282a;
    color: #cd5334;
    padding: 20px;
@@ -79,34 +74,35 @@
    flex-direction: column;
  }
 
- #sidebar h1 {
+ body > header h1 {
    font-size: 52px;
    text-align: center;
    margin-bottom: 50px;
+   font-feature-settings: "ss02";
  }
 
- #sidebar span {
+ body > header span {
    margin-bottom: 10px;
  }
 
  
- #sidebar address {
+ body > header address {
    font-style: normal;
    margin-bottom: 40px;
  }
 
- #sidebar address a, #sidebar .uni {
+ body > header address a, body > header p {
    padding-left: 40px;
    position: relative;
  }
 
 
- #sidebar address a {
+ body > header address a {
    color: #cd5334;
    text-decoration: none;
  }
 
- #sidebar address a:before, #sidebar .uni:before {
+ body > header address a:before, body > header p:before {
    position: absolute;
    left: 0;
    display: block;
@@ -114,38 +110,40 @@
    text-align: center;
  }
 
- #sidebar .github:before { content: ""; }
- #sidebar .email:before { content: ""; }
- #sidebar .phone:before { content: ""; }
+ body > header .degree:before { content: ""; }
+ body > header .github:before { content: ""; }
+ body > header .email:before { content: ""; }
+ body > header .phone:before { content: ""; }
+ body > header .uni:before { content: ""; }
+ body > header .skills:before { content: ""; }
 
- #sidebar .uni {
+ body > header p {
    color: #544f50;
    text-align: justify;
  }
 
- #sidebar .uni:before {
-   content: "";
+ body > header p:before {
    top: 50%;
    transform: translateY(-50%);
    text-align: center;
    color: #cd5334;
  }
 
- #sidebar strong {
+ body > header strong {
    color: #cd5334;
    font-weight: normal;
  }
 
- #sidebar span:before { font-size: 20px; }
+ body > header span:before { font-size: 20px; }
 
- #sidebar .interests {
+ body > header .interests {
    margin-top: 30px;
    display: flex;
    flex-wrap: wrap;
    padding: 0;
  }
 
- #sidebar .interests li {
+ body > header .interests li {
    display: inline-block;
    text-align: center;
    margin: 20px;
@@ -153,15 +151,15 @@
    color: #544f50;
  }
 
- #sidebar .interests li:before {
+ body > header .interests li:before {
    display: block;
    color: #cd5334;
  }
 
- #sidebar .interests .reading:before { content: ""; }
- #sidebar .interests .programming:before { content: ""; }
- #sidebar .interests .drawing:before { content: ""; }
- #sidebar .interests .sca:before { content: ""; }
+ body > header .interests .reading:before { content: ""; }
+ body > header .interests .dance:before { content: ""; }
+ body > header .interests .drawing:before { content: ""; }
+ body > header .interests .sca:before { content: ""; }
 
  main {
    display: flex;
@@ -169,100 +167,25 @@
  }
 
  main > section {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   flex-basis: calc(50% - 60px);
    padding: 30px;
  }
 
- #achievements {
-   flex-basis: 50%;
+ main > section ul {
+   list-style-type: square;
+   padding-left: 15px;
  }
 
- /*
- #skills {
-   flex-basis: 25%;
-   background: #2e282a;
-   color: #cd5334;
-   position: relative;
-   right: 20px;
+ main > section li {
+   margin-bottom: 5px;
  }
 
- #skills:after {
-   content: '';
-   display: block;
-   border-left: 97px solid #2e282a;
-   border-right: 97px solid #2e282a;
-   border-bottom: 60px solid transparent;
-   position: absolute;
-   left: 0;
-   bottom: -60px;
- }
-*/
-
-#skills {
-    background: #2e282a;
-    color: #cd5334;
-    border: 1px dashed hsl(12, 45%, 40%);
-    box-shadow: 5px 0 0 #2e282a,
-                -5px 0 0 #2e282a,
-                0 -5px 0 #2e282a,
-                5px -5px 0 #2e282a,
-                -5px -5px 0 #2e282a;
-    position: relative;
-    flex-basis: 20%;
-    z-index: 3;
-}
-
-#skills:after,
-#skills:before {
-    content: '';
-    position: absolute;
-    top: calc(100% - 1px);
-    width: calc(50% + 25px);
-    height: 49px;
-    border-bottom: 1px dashed #cd5334;
-}
-
-#skills:after {
-  transform: rotateZ(40deg) skewX(40deg) translateY(-2px);
-    transform-origin: top right;
-    right: -1px;
-    background-color: #2e282a;
-    border-right: 1px dashed #cd5334;
-    box-shadow: 6px 0 0 #2e282a,
-                0 6px 0 #2e282a,
-                6px 6px 0 #2e282a;
-}
-
-#skills:before {
-    transform: rotateZ(-40deg) skewX(-40deg);
-    transform-origin: top left;
-    left: -1px;
-    background-color: #2e282a;
-    border-left: 1px dashed #cd5334;
-    box-shadow: -6px 0 0 #2e282a,
-                0 6px 0 #2e282a,
-                -6px 6px 0 #2e282a;
-}
-
- #skills li {
-   margin-bottom: 10px;
+ main > .camp {
+   color: #2e282a;
+   background: #c97d6c;
+   flex-basis: 100%;
  }
 
- #achievements > ul > li {
-   border-left: 3px solid #C97D60;
-   margin: 5px;
-   padding-left: 4px;
- }
-
- #experience {
-   display: flex;
-   flex-wrap: wrap;
-   background: #C97D60;
- }
-
- #experience header {
-   width: 100%;
- }
-
- #experience section {
-   flex-basis: 50%;
- } 

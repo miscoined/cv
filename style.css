@@ -1,11 +1,59 @@
  /*
  https://coolors.co/c97d60-544f50-cd5334-ffbcb5-f2e5d7
-@import url('https://fonts.googleapis.com/css?family=Cabin|Nunito|Nunito+Sans|Patua+One|Raleway|Titillium+Web');
 */
- @import url('https://fonts.googleapis.com/css?family=Cabin');
 
+@font-face {
+  font-family: 'FontAwesome';
+  src: local('FontAwesome') url('font/fontawesome-webfont.eot?v=4.7.0');
+  src: url('font/fontawesome-webfont.eot?#iefix&v=4.7.0') format('embedded-opentype'),
+       url('font/fontawesome-webfont.woff2?v=4.7.0') format('woff2'),
+       url('font/fontawesome-webfont.woff?v=4.7.0') format('woff'),
+       url('font/fontawesome-webfont.ttf?v=4.7.0') format('truetype'),
+       url('font/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*
  @page {
    size: A4;
+ }
+
+ html {
+   background: #ddd;
+
+ }
+
+body {
+   width: 21cm;
+   height: 29.7cm;
+   margin: 0 auto;
+   box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
+}
+*/
+
+html, body {
+  margin: 0;
+}
+
+body {
+   font: 14px "Cabin";
+   background: #e0d3c5;
+   display: flex;
+ }
+
+ @font-face {
+   font-family: 'Cabin';
+   src: url('font/Cabin-Regular.otf');
+   font-weight: normal;
+   font-style: normal;
+ }
+
+ @font-face {
+   font-family: 'Cabin';
+   src: url('font/Cabin-Bold.otf');
+   font-weight: bold;
+   font-style: normal;
  }
 
  @font-face {
@@ -18,21 +66,6 @@
  ul { list-style: none; }
  ul { padding: 0; }
 
- html {
-   background: #ddd;
- }
-
- body {
-   font: 16px "Cabin";
-   background: #e0d3c5;
-   box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
-   /* A4 Page dimensions */
-   width: 21cm;
-   height: 29.7cm;
-   margin: 0 auto;
-   color: #2e282a;
-   display: flex;
- }
 
  body > section {
    position: relative;
@@ -46,6 +79,7 @@
 
  h2 {
    margin: 0;
+   font-size: 30px;
  }
 
  .tagline {
@@ -72,12 +106,14 @@
    display: flex;
    justify-content: center;
    flex-direction: column;
+   width: 216px;
+   font-size: 16px;
  }
 
  body > header h1 {
    font-size: 52px;
    text-align: center;
-   margin-bottom: 50px;
+   margin-bottom: 75px;
    font-feature-settings: "ss02";
  }
 
@@ -85,10 +121,10 @@
    margin-bottom: 10px;
  }
 
- 
+
  body > header address {
    font-style: normal;
-   margin-bottom: 40px;
+   margin-bottom: 50px;
  }
 
  body > header address a, body > header p {
@@ -100,6 +136,7 @@
  body > header address a {
    color: #cd5334;
    text-decoration: none;
+   display: block;
  }
 
  body > header address a:before, body > header p:before {
@@ -110,12 +147,16 @@
    text-align: center;
  }
 
+ body > header *:before { font-family: "FontAwesome"; }
+
+ body > header .job:before { content: ""; }
  body > header .degree:before { content: ""; }
  body > header .github:before { content: ""; }
  body > header .email:before { content: ""; }
  body > header .phone:before { content: ""; }
  body > header .uni:before { content: ""; }
  body > header .skills:before { content: ""; }
+ body > header .web:before { content: ""; }
 
  body > header p {
    color: #544f50;
@@ -163,29 +204,56 @@
 
  main {
    display: flex;
-   flex-wrap: wrap;
+   flex-direction: column;
  }
 
  main > section {
+   padding: 20px;
+ }
+
+ main > section > div {
    display: flex;
-   flex-direction: column;
    justify-content: center;
-   flex-basis: calc(50% - 60px);
-   padding: 30px;
+ }
+
+ main > section > div > section {
+   width: calc(50% - 20px);
+   flex-basis: 50%;
+   margin-left: 5px;
+   margin-right: 5px;
+ }
+
+
+ main > section > div li {
+   margin: 0;
+ }
+
+ main > section > div > section > p {
+   margin: 0;
+   font-size: 12px;
+ }
+
+ main > section > h2 {
+   text-align: center;
+ }
+
+ main > section h3 {
+   margin-bottom: 2px;
+   margin-top: 0;
  }
 
  main > section ul {
    list-style-type: square;
    padding-left: 15px;
- }
-
- main > section li {
-   margin-bottom: 5px;
+   margin-top: 5px;
  }
 
  main > .camp {
    color: #2e282a;
    background: #c97d6c;
-   flex-basis: 100%;
+   flex-grow: 1;
+ }
+
+ main > .camp h2 {
  }
 

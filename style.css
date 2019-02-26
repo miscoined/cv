@@ -27,7 +27,7 @@ main p {
  }
 
 body {
-   font: 12px "Open Sans";
+   font: 14px "Open Sans";
    background: #f4e9de;
    display: flex;
  }
@@ -48,6 +48,7 @@ body {
    color: #cd5334;
    font-weight: normal;
    margin: 0;
+   font-size: 16px;
  }
 
  .sidebar {
